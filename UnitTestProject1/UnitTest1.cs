@@ -14,6 +14,13 @@ namespace UnitTestProject1
         {
             Beer = new Beer(1,"Carlsberg",12.5,4.5);
         }
+
+        [TestMethod]
+        public void TestId_valid()
+        {
+            Assert.AreEqual(1,Beer.Id);
+        }
+
         [TestMethod]
         public void TestName_TooShort_throwException()
         {
@@ -36,6 +43,12 @@ namespace UnitTestProject1
         public void TestPrice_AtZero_throwException()
         {
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => Beer.Pris = 0);
+        }
+
+        [TestMethod]
+        public void TestPrice_Valid()
+        {
+            Assert.AreEqual(12.5,Beer.Pris);
         }
 
         [TestMethod]
